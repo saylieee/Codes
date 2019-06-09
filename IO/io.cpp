@@ -46,7 +46,7 @@ int main()
     
   */
     
-    //reading 2-D strings
+    //reading Multiple strings
     
  /*
   
@@ -97,12 +97,83 @@ int main()
     }
    fp.close();
    */
-    ofstream fp;
+  /*  ofstream fp;
     string S;
     fp.open("sample1.txt");
     
     getline(cin,S);
     fp<<S<<endl;
     fp.close();
+   */
+    //Reading 1-D,2-D and 3-D array
+    
+ /*   int n =10;
+    int *a = (int *) malloc(sizeof(int) *n);
+    
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i] );
+    }
+    
+    for (int i = 0;i <n;i++) {
+        printf("%d \n",a[i]);
+    }
+  */
+   
+ /*
+    int r = 3;
+    int c = 5;
+    
+    int **A = (int **)malloc(sizeof(int *) *r);
+    
+    for (int i = 0 ; i < r;i++) {
+        A[i] = (int *) malloc(sizeof(int) * c);
+    }
+    
+    for (int i = 0 ; i < r ; i++) {
+        
+        for (int j = 0; j < c; j++) {
+            
+            scanf("%d",&A[i][j]);
+        }
+    }
+    
+    for (int i = 0 ; i < r ; i++) {
+        
+        for (int j = 0; j < c; j++) {
+            
+            printf("%d ",A[i][j]);
+        }
+        printf("\n");
+    }
+  */
+    int r = 3;
+    int c = 3;
+    int p = 3;
+    int temp = 0;
+    int ***A_3D = (int ***) malloc(sizeof(int **) * p);
+    
+    for (int i = 0; i < p; i++) {
+        A_3D[i] = (int **)malloc(sizeof(int *) * r);
+        for(int j  = 0 ; j < r ; j++) {
+            A_3D[i][j] = (int *) malloc(sizeof(int) * c);
+        }
+    }
+    
+    for (int i = 0; i < p; i++) {
+        for (int j = 0; j < r ;j++) {
+            for (int k = 0; k < c ;k++) {
+                A_3D[i][j][k] = ++temp;
+            }
+        }
+    }
+    for (int i = 0; i < p ; i++) {
+        for (int j = 0; j < r ;j++) {
+            for (int k = 0; k < c ;k++) {
+                printf("%d ",A_3D[i][j][k]);
+            }
+            printf("\n");
+        }
+        printf("\n----------\n");
+    }
     return 0;
 }
